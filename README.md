@@ -19,16 +19,17 @@
 
 ---
 
-## 二、必须替换的占位内容
+## 二、已填写的信息
 
-打开 `site/index.html`，搜索以下占位符并替换：
-
-| 占位符 | 替换成 |
+| 项 | 内容 |
 |---|---|
-| `EMAIL_PLACEHOLDER` | 你的邮箱（出现 2 次：右上按钮 + 底部联系区） |
-| `<title>` 里的「作品集 · AIGC 动画与内容制作」 | 可改成「你的名字 · 作品集」 |
+| 姓名 | 童智羽 |
+| 学校 | 河北科技师范学院 · 数字媒体技术 |
+| 邮箱 | 2067465022@qq.com |
+| 微信 | SHANLILINGHUO233 |
+| 抖音 | SHANLILINGHUO |
 
-简历文件已放在 `site/resume.pdf`，如果想换版本，直接覆盖这个文件即可（文件名不要改）。
+要改这些信息，打开 `site/index.html` 搜索对应文字替换即可；换简历直接覆盖 `resume.pdf`（文件名不要改）。
 
 ---
 
@@ -68,7 +69,6 @@
 | 文案、项目描述 | `site/index.html` |
 | 颜色、间距、深色主题 | `site/style.css` 顶部的 `:root` 变量 |
 | 换视频 | 覆盖 `site/media/` 里同名的 mp4（保持文件名），封面图用同名的 jpg |
-| 换简历 | 覆盖 `site/resume.pdf` |
 | 加项目 | 复制一段 `<article class="work">` 改内容即可 |
 
 **视频压缩建议**：网页用的视频控制在 10 MB 以内，720p、H.264、`+faststart`。
@@ -87,7 +87,6 @@ site/
 ├── index.html          页面
 ├── style.css           样式
 ├── app.js              点击播放（灯箱）
-├── resume.pdf          简历
 └── media/
     ├── scifan_reel.mp4 《剑碎重鸣》片花 38 秒
     ├── whale_day.mp4  《和大肥鱼的一天》60 秒
