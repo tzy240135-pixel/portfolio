@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品集 · AIGC 动画与内容制作</title>
+<meta name="description" content="AIGC 动画设计 / 内容制作 作品集：AI 短剧、数字人口播、角色设定。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <p class="tag">AIGC 动画设计 / 内容制作</p>
+    <h1>作品集</h1>
+    <p class="lede">用 ComfyUI 与 MiniMax H3 从零搭出可批量生产的 AI 短片管线。<br>下面四部片子，从剧本、分镜、定妆图到成片，全部由我独立完成。</p>
+    <div class="stats">
+      <div><b>4</b><span>部完整作品</span></div>
+      <div><b>100+</b><span>个生成镜头</span></div>
+      <div><b>3min59s</b><span>最长单片刻长</span></div>
+    </div>
+    <div class="hero-actions">
+      <a class="btn primary" href="#works">看作品</a>
+      <a class="btn" href="mailto:EMAIL_PLACEHOLDER">联系我</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="works" class="section">
+  <div class="wrap">
+    <h2>作品</h2>
+    <p class="sub">点击封面播放。每部片子下面写了我在里面做了什么、用了什么工具。</p>
+
+    <article class="work">
+      <div class="work-media">
+        <video class="player" preload="none" playsinline
+               poster="media/scifan_reel.jpg"
+               src="media/scifan_reel.mp4"></video>
+        <button class="play" aria-label="播放">▶</button>
+        <span class="badge">片花 38 秒</span>
+      </div>
+      <div class="work-info">
+        <h3>《剑碎重鸣》· AI 修仙爽剧</h3>
+        <p class="meta">13 段 / 73 个镜头 / 成片 3 分 59 秒 / 2026</p>
+        <p>天才渡劫失败沦为杂役，忍辱三年后于枯井顿悟，宗门大比上一掌打脸全场。全片用 AI 生成，包含对白、内心旁白与环境音。</p>
+        <ul class="points">
+          <li><b>角色一致性</b>：先用 Qwen-Image 出 8 张三视图定妆，再用 MiniMax H3 的参考图模式逐镜生成；发现「5 张参考图会出现两个主角」，改为 2–3 张 + 文字外形描述解决。</li>
+          <li><b>批量生产</b>：把 73 个镜头的提示词写进 Python 数据文件，脚本自动提交、轮询、下载、断点续跑，一夜出 72 镜。</li>
+          <li><b>质量控制</b>：逐镜人工验收，列出 26 个问题镜头（人物错用、构图错误、字幕泄漏）单独重跑。</li>
+        </ul>
+        <p class="tools"><span>ComfyUI</span><span>MiniMax H3</span><span>Qwen-Image 2.1</span><span>Python API</span><span>ffmpeg</span></p>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work-media">
+        <video class="player" preload="none" playsinline
+               poster="media/whale_day.jpg"
+               src="media/whale_day.mp4"></video>
+        <button class="play" aria-label="播放">▶</button>
+        <span class="badge">成片 60 秒</span>
+      </div>
+      <div class="work-info">
+        <h3>《和大肥鱼的一天》· 第一人称日常短片</h3>
+        <p class="meta">12 段 / 60 秒 / 带配音与字幕 / 2026</p>
+        <p>以第一人称视角记录「和鲸鱼女仆的一天」：早上叫起床、厨房端饭、超市抢米、午后打盹、黄昏阳台、夜里递热牛奶。真人视角 + 二次元角色的反差是核心。</p>
+        <ul class="points">
+          <li><b>拆段生产</b>：把 60 秒拆成 12 个 5 秒段，实测发现生成耗时随帧数超线性增长（5 秒 5.5 分钟，15 秒 43 分钟），拆段既快又能单独重跑。</li>
+          <li><b>连贯性</b>：先用「上一段尾帧接下一段首帧」，发现会在镜头中途被截断，改为每段独立生成 + 统一场景描述。</li>
+          <li><b>声音</b>：TTS 合成台词后用 RVC 换成角色音色，环境音压到 30%，ASS 烧字幕並做响度归一。</li>
+        </ul>
+        <p class="tools"><span>MiniMax H3</span><span>TTS + RVC</span><span>ASS 字幕</span><span>ffmpeg</span></p>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work-media">
+        <video class="player" preload="none" playsinline
+               poster="media/koubo60.jpg"
+               src="media/koubo60.mp4"></video>
+        <button class="play" aria-label="播放">▶</button>
+        <span class="badge">成片 62 秒</span>
+      </div>
+      <div class="work-info">
+        <h3>《大肥鱼梗与 DeepSeek》· AI 口播</h3>
+        <p class="meta">12 段 / 62 秒 / 1088×1920 / 2026</p>
+        <p>用一张角色立绘做「数字主播」，让模型自己念稿：解释「大肥鱼」这个梗的来历，以及 DeepSeek 在价格、代码数学、开源、中文四方面的优势。</p>
+        <ul class="points">
+          <li><b>原生语音</b>：不做 TTS + 对口型，而是把台词写进提示词让视频模型直接生成语音，口型与语气同源，没有「朗读腔」。</li>
+          <li><b>音色一致性</b>：用基频分析逐段检查 12 段的音高，揪出掉了一个八度的第 11 段和音量小 10 dB 的第 4 段，单独重跑补齐。</li>
+          <li><b>超分</b>：4 GB 显存无法原生生成 1080p，改为 544×960 生成 + 4x 逐帧超分到 1088×1920，1489 帧约 110 分钟。</li>
+        </ul>
+        <p class="tools"><span>MiniMax H3</span><span>SolAttn 稀疏注意力</span><span>4x-UltraSharp</span><span>librosa 分析</span></p>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work-media">
+        <video class="player" preload="none" playsinline
+               poster="media/chushibiao.jpg"
+               src="media/chushibiao.mp4"></video>
+        <button class="play" aria-label="播放">▶</button>
+        <span class="badge">成片 20 秒</span>
+      </div>
+      <div class="work-info">
+        <h3>《出师表》数字人口播</h3>
+        <p class="meta">20 秒 / 竖屏 / 2026</p>
+        <p>传统数字人管线：真人照片驱动说话视频，换声成角色音色，配字幕与背景。用来对比「传统方案」与「视频模型原生方案」的差异。</p>
+        <ul class="points">
+          <li><b>三代迭代</b>：Wav2Lip 口型对齐 → LivePortrait 表情驱动 → 加入 RVC 换声，逐版对比画质与自然度。</li>
+          <li><b>踩坑记录</b>：动漫脸无法被 Wav2Lip 检测、insightface 权重缺失、GBK 控制台崩溃等问题逐个解决。</li>
+        </ul>
+        <p class="tools"><span>Wav2Lip</span><span>LivePortrait</span><span>RVC</span><span>insightface</span></p>
+      </div>
+    </article>
+
+    <div class="gallery">
+      <h3 class="gallery-title">角色与场景设定</h3>
+      <p class="sub">为《剑碎重鸣》生成的 3D CG 风格设定图，用于锁定角色外观，保证后续镜头一致。</p>
+      <div class="gallery-grid">
+        <figure><img src="media/cast.jpg" alt="人物设定" loading="lazy"><figcaption>8 个角色 · 三视图定妆</figcaption></figure>
+        <figure><img src="media/scene.jpg" alt="场景设定" loading="lazy"><figcaption>9 个场景 · 光线与材质</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <h2>我的管线</h2>
+    <p class="sub">不是一个个镜头手点，而是把整部片子拆成可以批量执行的任务。</p>
+    <ol class="pipeline">
+      <li><b>剧本与分镜</b><span>按「一镜一事」拆到 5 秒一个动作，写清景别、表情、环境音</span></li>
+      <li><b>角色与场景</b><span>文生图出定妆图与场景图，锁定外观后当参考图</span></li>
+      <li><b>批量生成</b><span>提示词进 Python 数据文件，API 提交、轮询、下载、断点续跑</span></li>
+      <li><b>验收与重跑</b><span>逐镜检查人物/构图/音量，问题镜头单独重跑</span></li>
+      <li><b>后期</b><span>超分、配音、字幕、拼接、响度归一</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>技能</h2>
+    <div class="skills">
+      <div class="skill"><h4>生成与工作流</h4><p>ComfyUI 工作流搭建 / 自定义节点排错 / 参考图与首尾帧控制 / 稀疏注意力与低显存优化</p></div>
+      <div class="skill"><h4>提示词工程</h4><p>分镜级提示词（场景·光·镜头·逐秒动作·环境音五段式）/ 中文对白与旁白标签 / 负面词控制</p></div>
+      <div class="skill"><h4>自动化</h4><p>Python + HTTP API 批量调度 / 断点续跑 / 失败重试 / 多任务排队</p></div>
+      <div class="skill"><h4>音频</h4><p>TTS 合成 / RVC 音色转换 / 基频与响度分析 / 混音与字幕对轴</p></div>
+      <div class="skill"><h4>后期</h4><p>ffmpeg 压制与拼接 / 逐帧超分 / 字幕烧录 / 调色与响度归一</p></div>
+      <div class="skill"><h4>内容</h4><p>爽剧节奏设计 / 分镜脚本 / 短剧平台选题 / 数据复盘</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap contact">
+    <h2>联系</h2>
+    <p>目前在校，寻找 AIGC 动画设计 / 内容制作相关实习。</p>
+    <div class="contact-links">
+      <a class="btn primary" href="mailto:EMAIL_PLACEHOLDER">EMAIL_PLACEHOLDER</a>
+      <a class="btn" href="resume.pdf" target="_blank">下载简历 PDF</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">本页所有视频均由 AI 生成 · 2026</div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="close" aria-label="关闭">✕</button>
+  <video controls playsinline></video>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
